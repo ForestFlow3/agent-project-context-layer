@@ -1,0 +1,201 @@
+{
+  "package_version": "v0.1.0",
+  "project": {
+    "name": "Spark Shelf",
+    "goal": "Build a tiny local-first inspiration inbox that helps a creator capture raw ideas, tag them, and shape selected notes into short outlines.",
+    "stage": "prototype",
+    "audience": [
+      "solo creator",
+      "vibe coding user",
+      "knowledge worker using coding agents"
+    ],
+    "boundaries": [
+      "v0.1 should be a static local web app",
+      "no backend",
+      "no login",
+      "no external API",
+      "no analytics",
+      "agents must keep project context files updated"
+    ],
+    "non_goals": [
+      "social platform",
+      "sync service",
+      "cloud account system",
+      "full AI writing app"
+    ]
+  },
+  "agent_context": {
+    "preferred_agents": [
+      "Deepseek",
+      "Kimi Code",
+      "Trae",
+      "Codex",
+      "Claude Code",
+      "Cursor"
+    ],
+    "working_rules": [
+      "Read project-context/README.md and the context files it lists before editing.",
+      "Use the Source Map section in PROJECT_CONTEXT.md before treating project claims as facts.",
+      "Record new durable decisions in DECISIONS.md.",
+      "Record missing context in the Open Questions section of PROJECT_CONTEXT.md instead of guessing."
+    ],
+    "handoff_rules": [
+      "Summarize current goal, boundaries, decisions, risks, and next actions before proposing changes.",
+      "Do not add backend, login, external APIs, or analytics without explicit approval."
+    ]
+  },
+  "timeline": [
+    {
+      "date": "2026-06-09",
+      "event": "Project idea defined as a local-first inspiration inbox.",
+      "source_ids": [
+        "S001"
+      ]
+    },
+    {
+      "date": "2026-06-09",
+      "event": "First demo scope constrained to a static local web app.",
+      "source_ids": [
+        "S002"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D001",
+      "decision": "Build v0.1 as a static local web app with no backend.",
+      "status": "accepted",
+      "reason": "Keeps the first demo small and easy for coding agents to modify.",
+      "source_ids": [
+        "S002"
+      ]
+    },
+    {
+      "id": "D002",
+      "decision": "Use local browser storage only for demo data.",
+      "status": "accepted",
+      "reason": "Supports local-first behavior without account systems or external services.",
+      "source_ids": [
+        "S002"
+      ]
+    },
+    {
+      "id": "D003",
+      "decision": "Keep AI outline generation as a placeholder in v0.1.",
+      "status": "accepted",
+      "reason": "Avoids drifting into a full AI writing app before the capture workflow is validated.",
+      "source_ids": [
+        "S002",
+        "S003"
+      ]
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "Q001",
+      "question": "Should the first demo be one HTML file or a small static app with separate assets?",
+      "owner": "human",
+      "status": "open",
+      "source_ids": [
+        "S002"
+      ]
+    },
+    {
+      "id": "Q002",
+      "question": "What should happen when local browser storage is cleared?",
+      "owner": "human",
+      "status": "open",
+      "source_ids": [
+        "S003"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "R001",
+      "risk": "Too many fields may make idea capture slow.",
+      "severity": "medium",
+      "mitigation": "Keep v0.1 fields limited to title, raw note, tags, target format, status, and last touched date.",
+      "source_ids": [
+        "S003"
+      ]
+    },
+    {
+      "id": "R002",
+      "risk": "AI outline generation may invent details not present in the raw note.",
+      "severity": "medium",
+      "mitigation": "Mark outline output as a placeholder and require it to stay grounded in the selected idea.",
+      "source_ids": [
+        "S003"
+      ]
+    },
+    {
+      "id": "R003",
+      "risk": "Local storage data can be lost if browser data is cleared.",
+      "severity": "low",
+      "mitigation": "Document this limitation in v0.1 and defer export/import decisions.",
+      "source_ids": [
+        "S003"
+      ]
+    }
+  ],
+  "todos": [
+    {
+      "id": "T001",
+      "task": "Define the v0.1 idea data model.",
+      "owner": "agent",
+      "status": "pending",
+      "source_ids": [
+        "S003"
+      ]
+    },
+    {
+      "id": "T002",
+      "task": "Create a small UI wireframe with idea list, tag filter, selected idea detail, and outline placeholder.",
+      "owner": "agent",
+      "status": "pending",
+      "source_ids": [
+        "S002",
+        "S003"
+      ]
+    },
+    {
+      "id": "T003",
+      "task": "Build a static demo and test it with 10 synthetic ideas.",
+      "owner": "agent",
+      "status": "pending",
+      "source_ids": [
+        "S003"
+      ]
+    }
+  ],
+  "source_map": [
+    {
+      "id": "S001",
+      "path": "inputs/idea-note.md",
+      "note": "Defines project idea, user problem, v0.1 features, and scope boundary.",
+      "confidence": "high"
+    },
+    {
+      "id": "S002",
+      "path": "inputs/session-note-01.md",
+      "note": "Defines static local app decision, preferred stack, first demo UI scope, and AI writing app concern.",
+      "confidence": "high"
+    },
+    {
+      "id": "S003",
+      "path": "inputs/feature-notes.md",
+      "note": "Defines potential data fields, status values, risks, and next actions.",
+      "confidence": "high"
+    }
+  ],
+  "audit": {
+    "source_type": "synthetic model-generated example",
+    "private_material_used": false,
+    "limitations": [
+      "This example does not prove real user demand.",
+      "The app has not been implemented.",
+      "The data model needs validation with real users before being treated as stable."
+    ]
+  }
+}

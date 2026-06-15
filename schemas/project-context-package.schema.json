@@ -1,0 +1,338 @@
+{
+  "title": "Project Context Package",
+  "type": "object",
+  "required": [
+    "package_version",
+    "project",
+    "agent_context",
+    "decisions",
+    "open_questions",
+    "risks",
+    "todos",
+    "source_map",
+    "audit"
+  ],
+  "properties": {
+    "package_version": {
+      "type": "string",
+      "description": "Schema/package version, such as v0.1.0."
+    },
+    "project": {
+      "type": "object",
+      "required": [
+        "name",
+        "goal",
+        "stage",
+        "audience",
+        "boundaries"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        },
+        "stage": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "boundaries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "non_goals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "agent_context": {
+      "type": "object",
+      "required": [
+        "preferred_agents",
+        "working_rules",
+        "handoff_rules"
+      ],
+      "properties": {
+        "preferred_agents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "working_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "handoff_rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/timeline_item"
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decision"
+      }
+    },
+    "open_questions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/open_question"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/risk"
+      }
+    },
+    "todos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/todo"
+      }
+    },
+    "source_map": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "source_type",
+        "private_material_used",
+        "limitations"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string"
+        },
+        "private_material_used": {
+          "type": "boolean"
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "timeline_item": {
+      "type": "object",
+      "required": [
+        "date",
+        "event",
+        "source_ids"
+      ],
+      "properties": {
+        "date": {
+          "type": "string"
+        },
+        "event": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "decision": {
+      "type": "object",
+      "required": [
+        "id",
+        "decision",
+        "status",
+        "reason",
+        "source_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "decision": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "accepted",
+            "reversed"
+          ]
+        },
+        "reason": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "open_question": {
+      "type": "object",
+      "required": [
+        "id",
+        "question",
+        "owner",
+        "status",
+        "source_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "risk": {
+      "type": "object",
+      "required": [
+        "id",
+        "risk",
+        "severity",
+        "mitigation",
+        "source_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "risk": {
+          "type": "string"
+        },
+        "severity": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "mitigation": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "todo": {
+      "type": "object",
+      "required": [
+        "id",
+        "task",
+        "owner",
+        "status",
+        "source_ids"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "task": {
+          "type": "string"
+        },
+        "owner": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "id",
+        "path",
+        "note",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
