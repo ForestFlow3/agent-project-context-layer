@@ -1,0 +1,48 @@
+name: Feedback
+description: Share setup, usage, or maintenance feedback.
+title: "[Feedback]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for trying Agent Project Context Layer.
+        Please do not include secrets, private customer data, or sensitive project materials.
+  - type: dropdown
+    id: agent
+    attributes:
+      label: Coding agent or environment
+      options:
+        - Claude Code
+        - Codex
+        - Cursor
+        - Kimi Code
+        - Trae
+        - Deepseek
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: What happened?
+      options:
+        - I understood the idea
+        - I installed or created the files
+        - I used it in a real project
+        - I got stuck
+        - I have a suggestion
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: What were you trying to do?
+      description: Keep it high-level. Do not paste private project content.
+    validations:
+      required: true
+  - type: textarea
+    id: friction
+    attributes:
+      label: What was confusing or useful?
+    validations:
+      required: false

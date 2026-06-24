@@ -8,6 +8,22 @@
 
 Agent Project Context Layer 为每个新项目提供一个 plain-file context layer，持续记录目标、边界、决策、风险、任务、未决问题、来源证据和下一步行动。
 
+### 一个新 session 的区别
+
+没有 Context Layer：
+
+- agent 只能依赖当前聊天窗口和零散文件。
+- 项目目标、边界、决策理由和下一步容易越聊越偏。
+- 新 session 经常需要重新解释项目背景。
+
+加入 Context Layer 后：
+
+- agent 先读取 `project-context/`。
+- `PROJECT_CONTEXT.md` 锚定目标和边界。
+- `DECISIONS.md` 保留已接受决策和理由。
+- `RISKS.md` 与 `TODO.md` 保留当前风险和下一步。
+- 重要结论通过 `source_map` 追溯到来源证据。
+
 版本：`v0.1.0`
 
 ### 30 秒开始
@@ -127,6 +143,12 @@ Markdown 文件是 human 和 coding agents 的日常界面。`schemas/project-co
 
 只有当 agent 持续更新它时，这个 layer 才有价值。重要信息应进入相关 context file，而不是只留在 chat 中。
 
+### Feedback
+
+如果这个 layer 帮你减少了 coding-agent 项目的上下文漂移，欢迎 star 收藏，方便之后在新项目里继续使用。
+
+如果你在安装、理解或维护这些 context files 时遇到问题，请开 issue 或记录你的使用场景；真实反馈会决定下一版优先级。
+
 ### 许可证
 
 本项目采用 [MIT License](LICENSE) 开源。
@@ -138,6 +160,22 @@ Keep coding-agent project context from drifting across repeated conversations.
 When you build with Deepseek, Kimi Code, Trae, Codex, Claude Code, Cursor, or another coding agent, goals, boundaries, decisions, and next actions can drift over time.
 
 Agent Project Context Layer gives every new project a plain-file context layer for durable goals, boundaries, decisions, risks, tasks, open questions, source evidence, and next actions.
+
+### What Changes In A New Session
+
+Without Context Layer:
+
+- The agent relies on the current chat and scattered files.
+- Goals, boundaries, decision reasons, and next actions drift over time.
+- Every new session needs the project background explained again.
+
+With Context Layer:
+
+- The agent reads `project-context/` first.
+- `PROJECT_CONTEXT.md` anchors goals and boundaries.
+- `DECISIONS.md` preserves accepted decisions and reasons.
+- `RISKS.md` and `TODO.md` preserve current risks and next actions.
+- Important claims point back to source evidence through `source_map`.
 
 Version: `v0.1.0`
 
@@ -257,6 +295,12 @@ It includes fields such as `project`, `agent_context`, `decisions`, `open_questi
 ### Core Rule
 
 The layer is useful only when agents keep it current. Important information should enter the relevant context file instead of staying only in chat.
+
+### Feedback
+
+If this layer helps keep your coding-agent project from drifting, feel free to star it so you can find it again for future projects.
+
+If setup, comprehension, or ongoing maintenance feels unclear, please open an issue or describe your use case. Real feedback will decide the next version.
 
 ### License
 

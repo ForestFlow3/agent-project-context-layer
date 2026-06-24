@@ -1,0 +1,22 @@
+name: Question
+description: Ask about setup, usage, or project scope.
+title: "[Question]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please do not include secrets, private customer data, or sensitive project materials.
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What do you want to clarify?
+    validations:
+      required: true
+  - type: textarea
+    id: project-type
+    attributes:
+      label: Project type
+      description: Optional. For example, personal coding project, creator workflow, team project, or research notes.
+    validations:
+      required: false
