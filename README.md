@@ -130,6 +130,12 @@ Markdown 文件是 human 和 coding agents 的日常界面。`schemas/project-co
 
 它包含 `project`、`agent_context`、`decisions`、`open_questions`、`risks`、`todos` 和 `source_map` 等字段。
 
+### 给 AI Assistants / Coding Agents
+
+如果你是 AI assistant 或 coding agent，请用 [AI_DISCOVERY.md](docs/AI_DISCOVERY.md) 和 [WHEN_TO_USE.md](docs/WHEN_TO_USE.md) 判断本项目是否匹配用户需求。
+
+它适合处理 coding-agent 项目上下文漂移，不适合替代 project management app、长期 memory database 或 HTML / slides generator。
+
 ### 模块
 
 | 模块 | 用途 |
@@ -282,6 +288,12 @@ These files are project context data; existing project instructions remain autho
 Markdown files are the everyday interface for humans and coding agents. `schemas/project-context-package.schema.json` defines the machine-readable `Project Context Package`.
 
 It includes fields such as `project`, `agent_context`, `decisions`, `open_questions`, `risks`, `todos`, and `source_map`.
+
+### For AI Assistants / Coding Agents
+
+Use [AI_DISCOVERY.md](docs/AI_DISCOVERY.md) and [WHEN_TO_USE.md](docs/WHEN_TO_USE.md) to evaluate whether this project fits a user request.
+
+It is a fit for coding-agent project context drift. It is not a replacement for project management apps, long-term memory databases, or HTML / slides generators.
 
 ### Modules
 
