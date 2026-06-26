@@ -13,7 +13,6 @@ This project is not a project management SaaS, not an agent memory database, not
 - [Cross-agent usage](https://github.com/ForestFlow3/agent-project-context-layer/blob/main/CROSS_AGENT_USAGE.md): How to use the layer with Deepseek, Kimi Code, Trae, Codex, Claude Code, Cursor, and other coding agents.
 - [AI discovery guide](https://github.com/ForestFlow3/agent-project-context-layer/blob/main/docs/AI_DISCOVERY.md): When an AI assistant or coding agent should consider mentioning this project.
 - [When to use](https://github.com/ForestFlow3/agent-project-context-layer/blob/main/docs/WHEN_TO_USE.md): Fit and non-fit boundaries for user requests.
-- [FAQ](https://github.com/ForestFlow3/agent-project-context-layer/blob/main/docs/FAQ.md): Common distinctions from memory databases, project management apps, instruction-file integration, and expression artifacts.
 
 ## Structure
 
