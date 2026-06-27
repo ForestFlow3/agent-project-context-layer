@@ -6,6 +6,8 @@
 
 默认结构只包含 `project-context/`。Deepseek、Kimi Code、Trae、Codex、Claude Code、Cursor 和其他能读取 workspace 文件的 coding agent 都可以使用。
 
+把 `project-context/` 当作项目状态的 single source of truth。不同宿主里的 `AGENTS.md`、`CLAUDE.md`、`.cursor/rules/` 等文件最多只是可选 adapter，不应该成为第二套冲突的项目记忆。
+
 ### 通用 Session Prompt
 
 ```txt
@@ -62,11 +64,23 @@
 在提出修改前，用 5 个 bullets 总结当前状态，并指出缺失或冲突的上下文。
 ```
 
+### Reset / Compact 前 Prompt
+
+```txt
+本 session 即将结束、重置或压缩。
+
+请只把稳定变化写回 project-context/：目标变化、已接受决策、风险、TODO、未决问题和来源证据。
+
+不要写入临时推理、未确认猜测、聊天过程或一次性计划。
+```
+
 ## English
 
 The goal is to keep project context stable across repeated discussions and edits without silently changing any agent's persistent instructions.
 
 The default structure contains only `project-context/`. Deepseek, Kimi Code, Trae, Codex, Claude Code, Cursor, and other coding agents that can read workspace files can use it.
+
+Treat `project-context/` as the single source of truth for project state. Host-specific files such as `AGENTS.md`, `CLAUDE.md`, or `.cursor/rules/` are optional adapters, not a second conflicting project memory.
 
 ### Universal Session Prompt
 
@@ -122,4 +136,14 @@ You are taking over this project.
 Read project-context/README.md and the context files it lists.
 
 Before proposing changes, summarize current state in 5 bullets and identify missing or conflicting context.
+```
+
+### Before Reset / Compact Prompt
+
+```txt
+This session is about to end, reset, or compact.
+
+Write only durable changes back to project-context/: goal changes, accepted decisions, risks, TODOs, open questions, and source evidence.
+
+Do not record temporary reasoning, unconfirmed guesses, chat process, or one-off plans.
 ```

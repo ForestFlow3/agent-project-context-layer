@@ -37,6 +37,12 @@
 
 - 
 
+### 维护方式
+
+- 新 session 开始时先读取本文件，再读取 `AGENT_BRIEF.md`、`DECISIONS.md`、`RISKS.md` 和 `TODO.md`。
+- 项目目标、边界、阶段、重要文件、未决问题或来源证据发生稳定变化时更新本文件。
+- 不要把临时推理、未确认猜测、密钥、客户数据或不应长期保存的敏感信息写入本文件。
+
 ### 重要文件
 
 | 文件 | 用途 |
@@ -65,6 +71,7 @@
 - 改变项目方向前，检查决策、风险、TODO、未决问题和 source map。
 - 不要编造需求、用户、指标或日期。
 - 当稳定项目状态变化时，更新这个 layer。
+- 宿主 instruction files 只是可选 adapter；不要在没有用户批准的情况下创建或修改它们。
 
 ## English
 
@@ -103,6 +110,12 @@ Use one of these values:
 
 - 
 
+### Maintenance
+
+- At the start of a new session, read this file, then read `AGENT_BRIEF.md`, `DECISIONS.md`, `RISKS.md`, and `TODO.md`.
+- Update this file when the project goal, boundary, stage, important files, open questions, or source evidence changes durably.
+- Do not store temporary reasoning, unconfirmed guesses, secrets, customer data, or sensitive information that should not be kept long-term.
+
 ### Important Files
 
 | File | Purpose |
@@ -131,3 +144,4 @@ Use one of these values:
 - Check decisions, risks, TODOs, open questions, and source map before changing project direction.
 - Do not invent requirements, users, metrics, or dates.
 - Update this layer when durable project state changes.
+- Host instruction files are optional adapters only; do not create or modify them without user approval.

@@ -6,6 +6,8 @@
 
 默认安装是非侵入式的：只创建 `project-context/`，不修改任何 agent instruction file。
 
+推荐路径：先安装 Skill，再把 setup prompt 发给你当前正在用的 coding agent，让它在目标项目里创建或更新 `project-context/`。
+
 ### 方式 A：一行命令安装 Skill（推荐）
 
 ```sh
@@ -55,6 +57,21 @@ project-context/
 修改前总结当前目标、边界、决策、风险、未决问题和下一步行动。
 ```
 
+### 新 Session / Reset 前
+
+新 session 开始时：
+
+```txt
+先读取 project-context/README.md 及其列出的上下文文件，再开始规划或修改。
+```
+
+结束、重置或压缩 session 前：
+
+```txt
+把本次已经稳定下来的目标变化、决策、风险、TODO、未决问题和来源证据写回 project-context/。
+不要写入临时推理或未确认猜测。
+```
+
 ### 更新规则
 
 ```txt
@@ -74,6 +91,8 @@ project-context/
 This package is for `agent-project-context-layer` v0.1.0.
 
 Default setup is non-invasive: it creates only `project-context/` and does not modify any agent instruction file.
+
+Recommended path: install the Skill, then send the setup prompt to the coding agent you are using inside the target project.
 
 ### Option A: Install The Skill With One Command (Recommended)
 
@@ -122,6 +141,21 @@ project-context/
 Read project-context/README.md and the context files it lists.
 
 Before editing, summarize the current goal, boundaries, decisions, risks, open questions, and next action.
+```
+
+### New Session / Before Reset
+
+At the start of a new session:
+
+```txt
+Read project-context/README.md and the context files it lists before planning or editing.
+```
+
+Before ending, resetting, or compacting a session:
+
+```txt
+Write durable goal changes, decisions, risks, TODOs, open questions, and source evidence back to project-context/.
+Do not record temporary reasoning or unconfirmed guesses.
 ```
 
 ### Update Rule

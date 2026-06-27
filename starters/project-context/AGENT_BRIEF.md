@@ -39,6 +39,18 @@
 - 已知阻塞：
 - 最佳下一步：
 
+### Session Reset 前
+
+在结束、重置或压缩 session 前，检查并更新：
+
+- 当前目标是否变化。
+- 下一步行动是否变化。
+- 新增或变化的决策。
+- 新增或变化的风险。
+- 新增或解决的未决问题。
+
+不要把临时推理或未确认猜测写入交接摘要。
+
 ### 更新仪式
 
 完成有意义的工作后，只更新稳定项目状态：
@@ -91,6 +103,18 @@ Before planning or editing, read:
 - Last meaningful change:
 - Known blocker:
 - Best next step:
+
+### Before Session Reset
+
+Before ending, resetting, or compacting a session, check and update:
+
+- Whether the current objective changed.
+- Whether the next action changed.
+- New or changed decisions.
+- New or changed risks.
+- New or resolved open questions.
+
+Do not put temporary reasoning or unconfirmed guesses into the handoff summary.
 
 ### Update Ritual
 

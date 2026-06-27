@@ -24,6 +24,13 @@
 
 把本目录接入宿主 instruction file 是可选操作，必须先展示完整 patch，并取得用户明确批准。
 
+### 最小仪式
+
+- 新 session 开始：先读本文件和上表文件，再规划或修改。
+- 重要工作完成：把稳定变化写回相关 context files。
+- session 结束、重置或压缩前：更新 `AGENT_BRIEF.md`、`TODO.md`、`DECISIONS.md`、`RISKS.md` 中发生变化的部分。
+- 不要写入临时推理、未确认猜测、一次性计划、密钥或不应长期保存的敏感信息。
+
 ## English
 
 This directory stores durable project context for humans and coding agents to inspect.
@@ -47,3 +54,10 @@ When starting or resuming project work, the user explicitly asks the coding agen
 After meaningful work, update only durable project state. Do not invent facts or rewrite history.
 
 Connecting this directory to a host instruction file is optional and requires an exact patch preview plus explicit user approval.
+
+### Minimal Ritual
+
+- Start of a new session: read this file and the files above before planning or editing.
+- After meaningful work: write durable changes back to the relevant context files.
+- Before ending, resetting, or compacting a session: update changed parts of `AGENT_BRIEF.md`, `TODO.md`, `DECISIONS.md`, and `RISKS.md`.
+- Do not record temporary reasoning, unconfirmed guesses, one-off plans, secrets, or sensitive information that should not be stored long-term.

@@ -21,6 +21,10 @@
 
 把稳定决策移动到 `DECISIONS.md`。
 
+只保留下一步真正可能执行的任务。完成项可以标为 `done`，也可以在项目稳定后归档或删除。
+
+不要把长期背景、决策理由或风险写在这里。
+
 ## English
 
 Record next actions that an agent or human can actually perform.
@@ -41,3 +45,7 @@ Record next actions that an agent or human can actually perform.
 Keep this list short.
 
 Move durable decisions to `DECISIONS.md`.
+
+Keep only next actions that can actually be performed. Done items may be marked `done`, archived, or removed after the project state is stable.
+
+Do not store long-term background, decision reasons, or risks here.

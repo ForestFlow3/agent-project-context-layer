@@ -2,11 +2,13 @@
 
 ## 中文
 
-防止 coding-agent 项目在反复对话中发生上下文漂移。
+给每个 coding-agent 项目一个可复制的 `project-context/` 项目大脑。
 
 当你使用 Deepseek、Kimi Code、Trae、Codex、Claude Code、Cursor 或其他 coding agent 构建项目时，项目目标、边界、决策和下一步容易随着对话漂移。
 
 Agent Project Context Layer 为每个新项目提供一个 plain-file context layer，持续记录目标、边界、决策、风险、任务、未决问题、来源证据和下一步行动。
+
+如果你发现自己经常在新 session 里重新解释“这个项目是什么、之前为什么这样决定、哪些文件不能动、下一步做什么”，这个 layer 就是为这种情况准备的。
 
 ### 一个新 session 的区别
 
@@ -85,6 +87,16 @@ for f in README.md PROJECT_CONTEXT.md AGENT_BRIEF.md DECISIONS.md RISKS.md TODO.
 在提出修改前，用 5 个 bullets 总结当前目标、边界、已接受决策、已知风险、未决问题和下一步行动。
 ```
 
+### Session Reset / 交接
+
+```txt
+在结束、重置或压缩 session 前，更新 project-context/ 下发生变化的文件。
+
+只写入稳定项目状态、已接受决策、风险、TODO、未决问题和来源证据。
+
+不要把临时推理、未确认猜测或聊天噪音写入长期上下文。
+```
+
 ### 显式接入协议
 
 默认不把 Context Layer 写入任何宿主 instruction file。
@@ -161,11 +173,13 @@ Markdown 文件是 human 和 coding agents 的日常界面。`schemas/project-co
 
 ## English
 
-Keep coding-agent project context from drifting across repeated conversations.
+Give every coding-agent project a reusable `project-context/` project brain.
 
 When you build with Deepseek, Kimi Code, Trae, Codex, Claude Code, Cursor, or another coding agent, goals, boundaries, decisions, and next actions can drift over time.
 
 Agent Project Context Layer gives every new project a plain-file context layer for durable goals, boundaries, decisions, risks, tasks, open questions, source evidence, and next actions.
+
+Use it when you keep re-explaining what the project is, why past decisions were made, which files are off-limits, and what should happen next.
 
 ### What Changes In A New Session
 
@@ -242,6 +256,16 @@ This command only adds missing files. It does not overwrite existing content or 
 Read project-context/README.md and the context files it lists.
 
 Before proposing changes, summarize the current goal, boundaries, accepted decisions, known risks, open questions, and next action in 5 bullets.
+```
+
+### Session Reset / Handoff
+
+```txt
+Before ending, resetting, or compacting this session, update the changed files under project-context/.
+
+Record only durable project state, accepted decisions, risks, TODOs, open questions, and source evidence.
+
+Do not write temporary reasoning, unconfirmed guesses, or chat noise into long-term context.
 ```
 
 ### Explicit Integration Protocol

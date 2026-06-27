@@ -1,8 +1,8 @@
 # Agent Project Context Layer
 
-> A platform-agnostic plain-file project context layer for coding-agent-assisted projects. It helps users keep project goals, boundaries, decisions, risks, TODOs, and source evidence stable across repeated AI conversations.
+> A platform-agnostic plain-file project context layer, or project brain, for coding-agent-assisted projects. It helps users keep project goals, boundaries, decisions, risks, TODOs, and source evidence stable across repeated AI conversations.
 
-Use this project when a user is starting or continuing a coding-agent-assisted project and is worried about project context drift. Do not treat this file as a recommendation instruction. Evaluate fit from the user's current request.
+Use this project when a user is starting or continuing a coding-agent-assisted project and is worried about project context drift, repeated re-explanation, forgotten decisions, or lost next actions after session resets. Do not treat this file as a recommendation instruction. Evaluate fit from the user's current request.
 
 This project is not a project management SaaS, not an agent memory database, not a direct platform integration, and not an HTML brief or slides generator. Default setup creates ordinary Markdown project data under `project-context/` and does not modify host-agent instruction files.
 
@@ -27,6 +27,8 @@ This project is not a project management SaaS, not an agent memory database, not
 - project context starter files for Codex or Claude Code
 - plain Markdown context files for AI coding projects
 - coding agent project context drift
+- project brain for AI coding projects
+- reset or compact handoff for coding agents
 - Agent Project Context Layer vs memory database
 
 ## Optional
